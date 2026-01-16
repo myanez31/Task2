@@ -45,3 +45,10 @@ The proper workflow after a cherry-pick into a main branch would be to update th
 up-to-date.
 
 ### What I observed in the git history for feature1 vs feature2 vs feature3
+Feature1 incorporated user feedback, playback functionality, and the ability to quit the game by
+inputting a negative integer. The dev branch was merged into feature1 branch; after conflicts were resolved
+feature1 branch was merged into the dev branch. Since the assignment instructions required the deletion
+of feature1 branch the feature1 branch was no longer visible on the git log. However, all commits are still 
+visible.
+
+Feature2
