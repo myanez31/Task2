@@ -51,4 +51,28 @@ feature1 branch was merged into the dev branch. Since the assignment instruction
 of feature1 branch the feature1 branch was no longer visible on the git log. However, all commits are still 
 visible.
 
-Feature2
+Feature2 was rebased with dev so the history shows that the feature two branch contains
+the previous commits contained in dev up until the rebase was called. It appears linear to be linear.
+
+Feature3 doesn't appear to be linear on the graph relative to dev due to the commits added to the end
+of the dev branch. It appears to diverge until feature3 was merged into dev.
+
+### When would I use each strategy in real projects
+I would use merge when if I wanted to preserve history and show where the commits
+diverged and merged together. The graphical depiction of these branches can be difficult
+to read but shows others (team members) the historical timeline of the commits.
+
+Rebase can be used if you wanted to clean up the history and ensure the feature branch
+contains all of the commits from the dev branch. After rebasing it the history would be linear
+and ensures the feature branch is compatible after resolving conflicts, building and running.
+Once rebase is complete and feature is ready to be integrated with the main/dev branch it could
+be merged into the main/dev branches.
+
+Squash is useful if you have multiple commits with negligible updates and you want to rebase the last
+commit with a number of previous commits. This cleans up the history and consolidates all the commits whichc
+makes reading the history easier for team members. Squashing a commit can hide the experimental
+historical work that occurred along the way while keeping all the updates into one final commit.
+
+Cherry-picking can be used in a real project when there is a bug that was found and is
+time-critical and needs to be corrected and integrated into a dev/main branch. It would allow
+engineers to selectively integrate fixes without having to integrate whole branches.
